@@ -79,8 +79,54 @@ You have the freedom to build out your APIs as you wish. At the very least, your
 
 ## API Documentation
 
-Search through the endpoints of the Animal Shelter API using Postman or in your browser using your local host. It will most likely look something like this: `http://localhost:5000/`
+Search through the endpoints of the Animal Shelter API using Postman or in your browser using your local host. It will most likely look something like this: `http://localhost:5000`
 
+### Endpoints
+
+ Base URL: `http://localhost:5000`
+
+ #### HTTP Request Structure for Cats
+ ```
+ GET /api/cats
+ POST /api/cats
+ GET /api/cats/{id}
+ PUT /api/cats/{id}
+ DELETE /api/cats/{id}
+ ```
+ #### Sample JSON Response for Cats
+ ```
+    {
+      "catId": 3,
+      "name": "Agatha Christie",
+      "age": 13,
+      "sex": "Female",
+      "breed": "Persian",
+      "coloring": "Grey",
+      "dateAvailable": "2021-01-22T11:26:17.744366",
+      "personality": "Agatha is a senior cat looking for her furrever lap. She loves snuggles and head pets"
+    }
+```
+ #### HTTP Request Structure for Dogs
+ ```
+ GET /api/dogs
+ POST /api/dogs
+ GET /api/dogs/{id}
+ PUT /api/dogs/{id}
+ DELETE /api/dogs/{id}
+ ```
+ #### Sample JSON Response for Dogs
+ ```
+  {
+    "dogId": 4,
+    "name": "Zeus",
+    "age": 2,
+    "sex": "Male",
+    "breed": "Rottweiler",
+    "coloring": "Black, Tan",
+    "dateAvailable": "2021-01-22T11:26:17.745422",
+    "personality": "Zeus had a growth mindset and loves to learn. He needs positive outlets for his energy and a calm environment."
+  }
+```
 ### Accessing the API using Postman
 
 ![Postman](./ReadMeAssets/Postman.png)
@@ -132,6 +178,11 @@ Search through the endpoints of the Animal Shelter API using Postman or in your 
 ![Swagger](./ReadMeAssets/Swagger.png)
 
  Did you read through the Postman examples and think that sounded a little exhausting? Well you are in luck! Swagger allows you do navigate through the CRUD functions of the Animal Shelter API through a very accesible browser interface. Here is all you have to do, while you have a live server running, open the `http://localhost:5000/` in your browser and then click on the CRUD function you would like to implement hit `Try it out!` and then `Execute` entering the CatID/DogId when necessary. Enjoy! 
+
+#### Swagger Resources
+ [Swashbuckle and ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-5.0&tabs=visual-studio)
+ 
+ [GitHub Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/blob/master/README.md)
 
 ## Technologies Used
 
