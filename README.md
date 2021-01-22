@@ -74,13 +74,38 @@ You have the freedom to build out your APIs as you wish. At the very least, your
 
 #### Launch the API
 * Navigate to `$ cd AnimalShelter.Solution/APIAnimalShelter`
-* Run the `$ dotnet run` command to access the CRUD capabilities of the API in Postman or in the browser using Swagger.
+* Run the `$ dotnet run` command to access CRUD capabilities of the API in Postman or in the browser using Swagger.
+* When you are finished accessing the API  you can clost your live server by pressing `control` and `C`.
 
 ## API Documentation
 
 Search through the endpoints of the Animal Shelter API using Postman or in your browser using your local host. It will most likely look something like this: `http://localhost:5000/`
 
-### Postman
+### Accessing the API using Postman
+
+![Postman](./ReadMeAssets/Postman.png)
+
+#### GET --> api/cats and api/cats/3 
+ With your live server running open the Postman app and type `http://localhost:5000/api/cats` or `http://localhost:5000/api/dogs` into the the URI line and choose `GET` from the CRUD functionalities drop down box and hit send. A response will appear in the body below. This will return a list of all the cats or dogs. 
+ To get specific information about an animal append the CatId or the DogId to the end of the URL like this:  `http://localhost:5000/api/cats/3` and hit send. This will return the Cat with the CatId = 3.
+
+#### PUT --> api/cats/3
+ To update information about an existing cat or dog you will need to submit all of the informations for or cat/dog through the `Body` tab three to the right of the `Params` tab under the URL. Select `raw` and then `JSON` from the dropdowns and then enter the updated information along with all other info:
+ ``` 
+  {
+        "catId": 3,
+        "name": "Agatha Christie",
+        "age": 13,
+        "sex": "Female",
+        "breed": "Persian",
+        "coloring": "Grey",
+        "dateAvailable": "2021-01-22T11:26:17.744366",
+        "personality": "Agatha is a senior cat looking for her furrever lap. She loves snuggles and head pets"
+    }
+```
+ Select `PUT` from the CRUD drop down list and press send. To double check that the cat/dog was updated do send a `GET` request.
+
+
 
 
 ## Technologies Used
@@ -99,6 +124,8 @@ _This application required use of the following programs/languages/libraries to 
 * _MySQL Workbench_
 * _Entity Framework Core_
 * _Postman_
+* _Swagger_
+* _Swashbuckler_
 
 ## Known Bugs
 
