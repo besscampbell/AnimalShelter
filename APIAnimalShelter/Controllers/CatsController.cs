@@ -62,7 +62,7 @@ namespace APIAnimalShelter.Controllers
     public ActionResult<Cat> GetRandom()
     {
       Random rand = new Random();
-      int toSkip = rand.Next(1, _db.Cats.Count());
+      int toSkip = rand.Next(0, _db.Cats.Count());
 
       var randomCat = _db.Cats.OrderBy(r => Guid.NewGuid()).Skip(toSkip).Take(1).FirstOrDefault();
       return randomCat;

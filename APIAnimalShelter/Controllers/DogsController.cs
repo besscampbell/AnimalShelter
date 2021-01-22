@@ -1,6 +1,7 @@
 using APIAnimalShelter.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -54,6 +55,18 @@ namespace APIAnimalShelter.Controllers
       var adoptedDog = _db.Dogs.FirstOrDefault(entry => entry.DogId == id);
       _db.Dogs.Remove(adoptedDog);
       _db.SaveChanges();
+    }
+
+
+    //GET api/dogs/random
+    [HttpGet("random")]
+    public ActionResult<Dog> GetRandom()
+    {
+      Random rand = new Random();
+      int toSkip = rand.Next(0, _db.Dogs.Count());
+
+      var randomDog = _db.Dogs.OrderBy(r => Guid.NewGuid()).Skip(toSkip).Take(1).FirstOrDefault();
+      return randomDog;
     }
   }
 }
