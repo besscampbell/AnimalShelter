@@ -29,5 +29,30 @@ namespace APIAnimalShelter.Controllers
       _db.Cats.Add(cat);
       _db.SaveChanges();
     }
+
+    //GET api/cats/1
+    [HttpGet("{id}")]
+    public ActionResult<Cat> Get(int id)
+    {
+      return _db.Cats.FirstOrDefault(entry => entry.CatId == id);
+    }
+
+    //PUT api/cats/1
+    [HttpPut("{id}")]
+    public void Put(int id, [FromBody] Cat cat)
+    {
+      cat.CatId = id;
+      _db.Entry(cat).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+      _db.SaveChanges();
+    }
+
+    //DELETE api/cats/1
+    [HttpDelete("{id}")]
+    public void Delete(int id)
+    {
+      var adoptedCat = _db.Cats.FirstOrDefault(entry => entry.CatId == id);
+      _db.Cats.Remove(adoptedCat);
+      _db.SaveChanges();
+    }
   }
 }
