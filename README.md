@@ -92,6 +92,7 @@ Search through the endpoints of the Animal Shelter API using Postman or in your 
  GET /api/cats/{id}
  PUT /api/cats/{id}
  DELETE /api/cats/{id}
+ GET /api/cats/random
  ```
  #### Sample JSON Response for Cats
  ```
@@ -113,6 +114,7 @@ Search through the endpoints of the Animal Shelter API using Postman or in your 
  GET /api/dogs/{id}
  PUT /api/dogs/{id}
  DELETE /api/dogs/{id}
+ GET /api/dogs/random
  ```
  #### Sample JSON Response for Dogs
  ```
@@ -131,12 +133,11 @@ Search through the endpoints of the Animal Shelter API using Postman or in your 
 
 ![Postman](./ReadMeAssets/Postman.png)
 
-#### GET --> api/cats and api/cats/{id} 
+#### GET --> /api/cats  --> /api/dogs  
 
  With your live server running open the Postman app and type `http://localhost:5000/api/cats` or `http://localhost:5000/api/dogs` into the the URI line and choose `GET` from the CRUD functionalities drop down box and hit send. A response will appear in the body below. This will return a list of all the cats or dogs. 
- To get specific information about an animal append the CatId or the DogId to the end of the URL like this:  `http://localhost:5000/api/cats/3` and hit send. This will return the Cat with the CatId = 3.
 
-#### POST --> api/cats
+#### POST --> /api/cats  --> /api/dogs
 
  To input a new cat or dog you will need to submit all of the information about the cat/dog in key/value pairs in JSON. I find the easiest to do this is to copy one of the examples retrieved from the get and replacing the information as the keys will not change, only the values or you can copy the example below. To input the information for the cat/dog you will need to select the `Body` tab three to the right of the `Params` tab under the URL. Select `raw` and then `JSON` from the dropdowns and then enter the cat/dog info(no need to enter an ID):
  ```
@@ -150,9 +151,11 @@ Search through the endpoints of the Animal Shelter API using Postman or in your 
         "personality": "Agatha is a senior cat looking for her furrever lap. She loves snuggles and head pets"
     }
 ```
+#### GET --> /api/cats/{id}  --> /api/dogs/{id}
 
+ To get specific information about an animal append the CatId or the DogId to the end of the URL like this:  `http://localhost:5000/api/cats/3`, select `GET` from the CRUD drop down and hit send. This will return the Cat with the CatId = 3.
 
-#### PUT --> api/cats/{id}
+#### PUT --> /api/cats/{id}  --> /api/dogs/{id}
 
  To update information about an existing cat or dog you will need to submit all of the information for the cat/dog through the `Body` tab three to the right of the `Params` tab under the URL. Select `raw` and then `JSON` from the dropdowns and then enter the updated information along with all other info:
  ``` 
@@ -169,9 +172,13 @@ Search through the endpoints of the Animal Shelter API using Postman or in your 
 ```
  Select `PUT` from the CRUD drop down list, enter `http://localhost:5000/api/cats/3`(the last number will change depending on the id of the animal you wish to update) into the URL and press send. To double check that the cat/dog was updated send a `GET` request.
 
-#### DELETE --> api/cats/{id}
+#### DELETE --> /api/cats/{id}  --> /api/dogs/{id}
  
  What do you know this animal has been adopted and no longer needs to be in the Animal Shelter's database. Type `http://localhost:5000/api/cats/3`(or the id of whichever animal you wish to delete), select `DELETE` from the CRUD drop down and hit send. To double check that the cat/dog was updated send a `GET` request. 
+
+#### GET --> /api/cats/random --> /api/dogs/random
+
+ Want to feature a pet of the day but worried about favoritism? Allow this API to do the work for you
 
 ### Accessing the API using Swagger
 
@@ -181,7 +188,7 @@ Search through the endpoints of the Animal Shelter API using Postman or in your 
 
 #### Swagger Resources
  [Swashbuckle and ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-5.0&tabs=visual-studio)
- 
+
  [GitHub Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/blob/master/README.md)
 
 ## Technologies Used

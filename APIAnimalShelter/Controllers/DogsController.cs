@@ -57,7 +57,6 @@ namespace APIAnimalShelter.Controllers
       _db.SaveChanges();
     }
 
-
     //GET api/dogs/random
     [HttpGet("random")]
     public ActionResult<Dog> GetRandom()
