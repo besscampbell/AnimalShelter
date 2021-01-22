@@ -1,7 +1,8 @@
+using APIAnimalShelter.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.AspNetCore.Mvc;
-using APIAnimalShelter.Models;
 
 namespace APIAnimalShelter.Controllers
 {
@@ -42,7 +43,7 @@ namespace APIAnimalShelter.Controllers
     public void Put(int id, [FromBody] Cat cat)
     {
       cat.CatId = id;
-      _db.Entry(cat).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+      _db.Entry(cat).State = EntityState.Modified;
       _db.SaveChanges();
     }
 
