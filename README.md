@@ -1,4 +1,4 @@
-#### Animal Shelter API
+# Animal Shelter API
 
 ### Independent project for Epicodus building out an API, 1.22.2021
 
@@ -35,7 +35,7 @@ You have the freedom to build out your APIs as you wish. At the very least, your
 
 • [MySQL Workbench](https://dev.mysql.com/downloads/file/?id=484391) **Instructions for setup below**
 
-• [Postman](https://www.postman.com/downloads/)
+• [Postman](https://www.postman.com/downloads/)(optional)
 
 #### MySQL & MySQL Workbench Setup instructions
 
@@ -72,9 +72,15 @@ You have the freedom to build out your APIs as you wish. At the very least, your
 * Ensure the option `Dump Structure and Data` is selected (located near the bottom).
 * Click `Start Import`
 
-#### API Documentation
+#### Launch the API
+* Navigate to `$ cd AnimalShelter.Solution/APIAnimalShelter`
+* Run the `$ dotnet run` command to access the CRUD capabilities of the API in Postman or in the browser using Swagger.
 
-Search through the endpoints of the Animal Shelter API using Postman or in your browser using the `http://localhost:5000/`
+## API Documentation
+
+Search through the endpoints of the Animal Shelter API using Postman or in your browser using your local host. It will most likely look something like this: `http://localhost:5000/`
+
+### Postman
 
 
 ## Technologies Used

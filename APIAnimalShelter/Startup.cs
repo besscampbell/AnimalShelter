@@ -27,6 +27,7 @@ namespace APIAnimalShelter
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "APIAnimalShelter", Version = "v1"});
             });
+            services.AddSwaggerGenNewtonsoftSupport();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
