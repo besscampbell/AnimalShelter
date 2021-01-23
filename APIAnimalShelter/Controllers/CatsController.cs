@@ -17,11 +17,32 @@ namespace APIAnimalShelter.Controllers
       _db = db;
     }
 
-    //GET api/cats/
+    //GET api/cats?
     [HttpGet]
-    public ActionResult<IEnumerable<Cat>> Get()
+    public ActionResult<IEnumerable<Cat>> GetQuery(string name, int age, string sex, string breed, string coloring, DateTime dateAvaiable)
     {
-      return _db.Cats.ToList();
+      var query = from c in _db.Cats select c;
+      if( name != null)
+      {
+        query = query.Where(entry => entry.Name.Contains(name));
+      }
+      if( age != 0)
+      {
+        query = query.Where(entry => entry.Age == age);
+      }
+      if( sex != null)
+      {
+        query = query.Where(entry => entry.Sex == sex);
+      }
+      if( breed != null)
+      {
+        query = query.Where(entry => entry.Breed.Contains(breed));
+      }
+      if( coloring != null)
+      {
+        query = query.Where(entry => entry.Coloring.Contains(coloring));
+      }
+      return query.ToList();
     }
 
     //POST api/cats
