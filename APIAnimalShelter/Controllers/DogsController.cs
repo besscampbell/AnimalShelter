@@ -19,7 +19,7 @@ namespace APIAnimalShelter.Controllers
 
     //GET api/dogs?
     [HttpGet]
-    public ActionResult<IEnumerable<Dog>> GetQuery(string name, int age, string sex, string breed, string coloring)
+    public ActionResult<IEnumerable<Dog>> GetQuery(string name, int age, string sex, string breed, string coloring, string personality)
     {
       var query = from c in _db.Dogs select c;
       if( name != null)
@@ -41,6 +41,10 @@ namespace APIAnimalShelter.Controllers
       if( coloring != null)
       {
         query = query.Where(entry => entry.Coloring.Contains(coloring));
+      }
+      if(personality != null)
+      {
+        query = query.Where(entry => entry.Personality.Contains(personality));
       }
       return query.ToList();
     }

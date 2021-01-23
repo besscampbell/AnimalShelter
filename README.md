@@ -137,6 +137,10 @@ Search through the endpoints of the Animal Shelter API using Postman or in your 
 
  With your live server running open the Postman app and type `http://localhost:5000/api/cats` or `http://localhost:5000/api/dogs` into the the URI line and choose `GET` from the CRUD functionalities drop down box and hit send. A response will appear in the body below. This will return a list of all the cats or dogs. 
 
+#### GET(query) --> /api/cats?breed=dsh || /api/cats?breed=siamese&sex=male  --> /api/dogs?name=b  || /api/dogs?name=b&age=3
+
+ This API also includes queryable capabilities. Search multiple parameters at once. Type in `http://localhost:500/api/cats?` or `http://localhost:5000/api/dogs?` and from there you can add on a various number of queries. The following are the keys available for queries: `name`, `age`, `sex`, `breed`, `coloring`, or `personality`. You can search for a combination of the properties they just must be separated by an `&`. While `age` and `sex` are queryable as exact matches, `name`, `breed`, `coloring`, and `personality` are queryable as partial matches. Append your queries as key=value pairs appended after the `?`
+
 #### POST --> /api/cats  --> /api/dogs
 
  To input a new cat or dog you will need to submit all of the information about the cat/dog in key/value pairs in JSON. I find the easiest to do this is to copy one of the examples retrieved from the get and replacing the information as the keys will not change, only the values or you can copy the example below. To input the information for the cat/dog you will need to select the `Body` tab three to the right of the `Params` tab under the URL. Select `raw` and then `JSON` from the dropdowns and then enter the cat/dog info(no need to enter an ID):
