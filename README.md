@@ -188,7 +188,7 @@ Search through the endpoints of the Animal Shelter API using Postman or in your 
 
 ![Swagger](./ReadMeAssets/Swagger.png)
 
- Did you read through the Postman examples and think that sounded a little exhausting? Well you are in luck! Swagger allows you do navigate through the CRUD functions of the Animal Shelter API through a very accesible browser interface. Here is all you have to do, while you have a live server running, open the `http://localhost:5000/` in your browser and then click on the CRUD function you would like to implement hit `Try it out!` and then `Execute` entering the CatID/DogId when necessary. Enjoy! 
+ Did you read through the Postman examples and think that sounded a little exhausting? Well you are in luck! Swagger allows you do navigate through the CRUD functions of the Animal Shelter API through a very accesible browser interface. Here is all you have to do, while you have a live server running, open the `http://localhost:5000/` in your browser and then click on the CRUD function you would like to implement hit `Try it out!` and then `Execute` entering the CatID/DogId/query when necessary. Enjoy! 
 
 #### Swagger Resources
  [Swashbuckle and ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-5.0&tabs=visual-studio)
