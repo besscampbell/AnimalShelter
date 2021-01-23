@@ -19,7 +19,7 @@ namespace APIAnimalShelter.Controllers
 
     //GET api/cats?
     [HttpGet]
-    public ActionResult<IEnumerable<Cat>> GetQuery(string name, int age, string sex, string breed, string coloring, DateTime dateAvaiable)
+    public ActionResult<IEnumerable<Cat>> GetQuery(string name, int age, string sex, string breed, string coloring)
     {
       var query = from c in _db.Cats select c;
       if( name != null)

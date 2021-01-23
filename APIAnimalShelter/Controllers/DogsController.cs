@@ -17,11 +17,32 @@ namespace APIAnimalShelter.Controllers
       _db = db;
     }
 
-    //GET api/dogs/
+    //GET api/dogs?
     [HttpGet]
-    public ActionResult<IEnumerable<Dog>> Get()
+    public ActionResult<IEnumerable<Dog>> GetQuery(string name, int age, string sex, string breed, string coloring)
     {
-      return _db.Dogs.ToList();
+      var query = from c in _db.Dogs select c;
+      if( name != null)
+      {
+        query = query.Where(entry => entry.Name.Contains(name));
+      }
+      if( age != 0)
+      {
+        query = query.Where(entry => entry.Age == age);
+      }
+      if( sex != null)
+      {
+        query = query.Where(entry => entry.Sex == sex);
+      }
+      if( breed != null)
+      {
+        query = query.Where(entry => entry.Breed.Contains(breed));
+      }
+      if( coloring != null)
+      {
+        query = query.Where(entry => entry.Coloring.Contains(coloring));
+      }
+      return query.ToList();
     }
 
     //POST api/dogs
